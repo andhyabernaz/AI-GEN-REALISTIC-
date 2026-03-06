@@ -4,6 +4,10 @@ compatibility_date = "2024-04-01"
 # This key is mainly for documentation or legacy integration.
 pages_build_output_dir = "dist-worker"
 
+# Configuration for Workers with Assets (allows 'wrangler deploy' to work)
+[assets]
+directory = "dist-worker"
+
 [vars]
 # Environment variables for the Worker/Pages function (if used)
 # Note: Client-side variables must be built-in via Vite

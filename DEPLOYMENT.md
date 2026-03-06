@@ -77,25 +77,25 @@ This will create a `dist-worker` directory.
 
 ### Deploy via Wrangler (CLI)
 
-**Recommended Method:** Use the provided deployment script which handles the build and deploy in one step.
+**Recommended Method (Cloudflare Pages):**
+Use the provided deployment script which handles the build and deploy in one step.
 
 ```bash
 npm run deploy:cloudflare
 ```
 
-This command runs:
-1. `npm run build:cloudflare` (Builds to `dist-worker`)
-2. `wrangler pages deploy dist-worker` (Deploys the correct folder)
+**Alternative Method (Cloudflare Workers with Assets):**
+If you prefer to deploy as a standard Worker (using `wrangler.toml` configuration):
 
-If you prefer to run commands manually:
-
-```bash
-# 1. Build
-npm run build:cloudflare
-
-# 2. Deploy
-npx wrangler pages deploy dist-worker --project-name ai-gen-realistic
-```
+1.  Build the project:
+    ```bash
+    npm run build:cloudflare
+    ```
+2.  Deploy using standard wrangler command:
+    ```bash
+    npx wrangler deploy
+    ```
+    *Note: This requires the `[assets]` configuration in `wrangler.toml`, which has been added.*
 
 ### Deploy via Dashboard (Git Integration)
 
