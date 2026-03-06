@@ -1,0 +1,22 @@
+name = "ai-gen-realistic"
+compatibility_date = "2024-04-01"
+pages_build_output_dir = "dist-worker"
+
+[vars]
+# Environment variables for the Worker/Pages function (if used)
+# Note: Client-side variables must be built-in via Vite
+VITE_PLATFORM = "cloudflare"
+ENVIRONMENT = "production"
+
+# Routes configuration (for Custom Domains on Workers)
+# routes = [
+#   { pattern = "example.com/*", zone_name = "example.com" }
+# ]
+
+# Compatibility flags
+compatibility_flags = ["nodejs_compat"]
+
+# Build configuration (optional, for Cloudflare Pages integration)
+[build]
+command = "npm run build:cloudflare"
+watch_dir = "src"

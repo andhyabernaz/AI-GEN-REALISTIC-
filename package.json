@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:cpanel": "vite build --mode cpanel",
+    "build:cloudflare": "vite build --mode cloudflare",
+    "preview": "vite preview",
+    "preview:cpanel": "vite preview --mode cpanel",
+    "preview:cloudflare": "vite preview --mode cloudflare"
   },
   "dependencies": {
     "react": "^19.1.1",

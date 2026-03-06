@@ -783,6 +783,17 @@ type ProductState = {
     duration: number;
 }
 
+import { config } from './src/config';
+
+const Footer: React.FC = () => (
+    <footer className="py-6 text-center text-slate-500 text-sm border-t border-slate-800 mt-8">
+        <p>&copy; {new Date().getFullYear()} Vidabot AI. All rights reserved.</p>
+        <p className="text-xs mt-1 opacity-50">
+            Running on {config.platform}
+        </p>
+    </footer>
+);
+
 const App: React.FC = () => {
     const initialProductState: ProductState = { name: '', description: '', targetMarket: '', callToAction: '', duration: 24 };
     const initialModelState = { source: 'ai' as 'manual' | 'ai', image: null, description: '' };
@@ -883,6 +894,7 @@ const App: React.FC = () => {
                     {renderContent()}
                 </div>
             </main>
+            <Footer />
         </div>
     );
 };
