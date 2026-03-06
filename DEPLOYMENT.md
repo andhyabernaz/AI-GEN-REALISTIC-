@@ -138,3 +138,25 @@ A `wrangler.toml` file is provided for advanced configuration if you are using C
 
 ### "Vite not recognized" Error
 -   **Fix**: Run `npm install` to ensure all dependencies are installed.
+
+## Monitoring and Verification
+
+### 1. Verification
+After deployment, verify the application is running on the correct platform:
+-   Scroll to the bottom of the page.
+-   Check the footer text. It should say: `Running on cloudflare` (or `cpanel`).
+-   If it says `development`, the build mode was not set correctly.
+
+### 2. Monitoring (Cloudflare)
+Cloudflare provides built-in analytics for your Pages project:
+-   Go to **Cloudflare Dashboard** > **Pages**.
+-   Select your project (`ai-gen-realistic`).
+-   Click on the **Analytics** tab to view:
+    -   Requests (24h)
+    -   Bandwidth usage
+    -   Visitor location
+-   For real-time logs (if enabled), use:
+    ```bash
+    npx wrangler pages deployment tail
+    ```
+
