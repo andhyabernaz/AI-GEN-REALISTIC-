@@ -8,6 +8,7 @@
     "build": "vite build",
     "build:cpanel": "vite build --mode cpanel",
     "build:cloudflare": "vite build --mode cloudflare",
+    "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy dist-worker --project-name ai-gen-realistic",
     "preview": "vite preview",
     "preview:cpanel": "vite preview --mode cpanel",
     "preview:cloudflare": "vite preview --mode cloudflare"

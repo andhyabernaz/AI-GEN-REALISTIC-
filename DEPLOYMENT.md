@@ -77,10 +77,23 @@ This will create a `dist-worker` directory.
 
 ### Deploy via Wrangler (CLI)
 
-If you have `wrangler` installed and authenticated:
+**Recommended Method:** Use the provided deployment script which handles the build and deploy in one step.
 
 ```bash
-# For Cloudflare Pages (Recommended)
+npm run deploy:cloudflare
+```
+
+This command runs:
+1. `npm run build:cloudflare` (Builds to `dist-worker`)
+2. `wrangler pages deploy dist-worker` (Deploys the correct folder)
+
+If you prefer to run commands manually:
+
+```bash
+# 1. Build
+npm run build:cloudflare
+
+# 2. Deploy
 npx wrangler pages deploy dist-worker --project-name ai-gen-realistic
 ```
 
@@ -108,6 +121,10 @@ A `wrangler.toml` file is provided for advanced configuration if you are using C
 ---
 
 ## Troubleshooting
+
+### "Missing entry-point" or "wrangler deploy on a Pages project" Error
+-   **Cause**: Running `npx wrangler deploy` (which is for Workers) instead of `npx wrangler pages deploy` (for Pages/Static Sites).
+-   **Fix**: Use `npm run deploy:cloudflare` or `npx wrangler pages deploy dist-worker`.
 
 ### cPanel: 404 Errors on Refresh
 -   **Cause**: The server is trying to find a file matching the URL path instead of serving `index.html`.

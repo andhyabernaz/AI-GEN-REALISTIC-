@@ -1,5 +1,7 @@
-name = "aigen"
+name = "ai-gen-realistic"
 compatibility_date = "2024-04-01"
+# For Cloudflare Pages, the build output directory is specified in the Dashboard or via CLI argument.
+# This key is mainly for documentation or legacy integration.
 pages_build_output_dir = "dist-worker"
 
 [vars]
