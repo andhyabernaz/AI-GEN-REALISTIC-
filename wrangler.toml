@@ -1,4 +1,4 @@
-name = "ai-gen-realistic"
+name = "aigen"
 compatibility_date = "2024-04-01"
 pages_build_output_dir = "dist-worker"
 
